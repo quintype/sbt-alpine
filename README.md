@@ -24,6 +24,7 @@ mkdir -p ~/.ivy2 && mkdir -p ~/.sbt
 docker run --rm -it \
            --mount type=bind,src="$HOME/.ivy2",dst=/root/.ivy2 \
            --mount type=bind,src="$HOME/.sbt",dst=/root/.sbt \
+           --mount type=bind,src="$(pwd)",dst=/app \           
            quay.io/quintype/sbt-alpine:1.1.1 \
            sbt sbtVersion
 ```
